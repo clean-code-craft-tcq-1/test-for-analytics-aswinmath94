@@ -32,8 +32,8 @@ List the dependencies of the Analysis-functionality.
 4. Libraries or Tools required to generate the PDF reports (eg: Pylatex)
 5. API's required to send notifications like email/sms when a new report is available.
 6. Libraries required to get system date and time.
+7. Libraries for decoding the physical signal values of Battery Telemetrics if the signals are stored in a different format or encoded form.
 
-(add more if needed)
 
 ### Mark the System Boundary
 
