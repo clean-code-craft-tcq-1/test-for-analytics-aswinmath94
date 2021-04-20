@@ -27,8 +27,11 @@ Notification must be sent when a new report is available.
 List the dependencies of the Analysis-functionality.
 
 1. Access to the Server containing the telemetrics in a csv file
-1. _enter dependency
-1. _enter dependency
+2. Acess to the Server for storing the PDF report which is generated every week.
+3. Libraries required to perform read operation on the input data csv files (eg: csv, pandas)
+4. Libraries or Tools required to generate the PDF reports (eg: Pylatex)
+5. API's required to send notifications like email/sms when a new report is available.
+6. Libraries required to get system date and time.
 
 (add more if needed)
 
