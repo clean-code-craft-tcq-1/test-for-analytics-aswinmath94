@@ -71,8 +71,8 @@ Enter one part that's real and another part that's faked/mocked.
 |--------------------------|--------------|-----------------------------|---
 Read input from server     | csv file     | internal data-structure     | Fake the server store
 Validate input             | csv data     | valid / invalid             | None - it's a pure function
-Notify report availability | _enter input | _enter output               | _enter fake or mock
-Report inaccessible server | _enter input | _enter output               | _enter fake or mock
-Find minimum and maximum   | _enter input | _enter output               | _enter fake or mock
-Detect trend               | _enter input | _enter output               | _enter fake or mock
-Write to PDF               | _enter input | _enter output               | _enter fake or mock
+Notify report availability | pdf file     | Available / Not available             | Fake the notification
+Report inaccessible server | csv data     | valid / invalid             | Fake the server store
+Find minimum and maximum   | csv data     | Minimum, Maximum           | None - it's a pure function
+Detect trend               | csv data     | Battery Telemetrics Value,Date & Time            | None - it's a pure function
+Write to PDF               | csv data     | PDF file with Minimum, Maximum, Date & Time Value             | Fake the PDF store
