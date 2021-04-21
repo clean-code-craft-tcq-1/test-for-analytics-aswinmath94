@@ -54,12 +54,14 @@ Write tests in the form of `<expected output or action>` from `<input>` / when `
 
 Add to these tests:
 
-1. Write minimum and maximum to the PDF from a csv containing positive and negative readings
-1. Write "Invalid input" to the PDF when the csv doesn't contain expected data
-1. _enter a test
-1. _enter a test
+1. Write minimum and maximum to the PDF from a csv containing positive and negative readings.
+2. Write Date and Time to the PDF when the reading continuously increases for 30 mins.
+3. Write "Invalid input" to the PDF when the csv doesn't contain expected data.
+4. Write "Data Unavailable" to the PDF when the csv file is empty or does not exist in the server.
+5. Write the count of breaches to the PDF report when the number of times the measured value crosses the threshold value in a month.
+6. Write a notification " Report Available", when a new report is available.
+7. Write "Success", when a PDF report is stored successfully in the server.
 
-(add more)
 
 ### Recognize Fakes and Reality
 
