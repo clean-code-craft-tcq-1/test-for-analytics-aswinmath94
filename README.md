@@ -43,10 +43,10 @@ What is included in the software unit-test? What is not? Fill this table.
 |---------------------------|---------------|---
 Battery Data-accuracy       | No            | We do not test the accuracy of data
 Computation of maximum      | Yes           | This is part of the software being developed
-Off-the-shelf PDF converter | Yes           | This is part of the software being developed as a PDF report need to be generated.
+Off-the-shelf PDF converter | No           | A mock can be used to trigger PDF write. PDF output need not tested.
 Counting the breaches       | Yes           | This is part of the software being developed to detect if threshold value is breached.
 Detecting trends            | Yes           | This is part of the software being developed
-Notification utility        | Yes           | This is part of the software being developed to send notification in case of breach.
+Notification utility        | Yes           | A mock can be used to trigger notification.
 
 ### List the Test Cases
 
