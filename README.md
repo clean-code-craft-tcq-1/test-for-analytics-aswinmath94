@@ -46,7 +46,7 @@ Computation of maximum      | Yes           | This is part of the software being
 Off-the-shelf PDF converter | No           | A mock can be used to trigger PDF write. PDF output need not tested.
 Counting the breaches       | Yes           | This is part of the software being developed to detect if threshold value is breached.
 Detecting trends            | Yes           | This is part of the software being developed
-Notification utility        | Yes           | A mock can be used to trigger notification.
+Notification utility        | No           | A mock can be used to trigger notification.
 
 ### List the Test Cases
 
