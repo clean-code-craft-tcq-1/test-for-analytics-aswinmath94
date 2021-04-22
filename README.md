@@ -73,8 +73,8 @@ Enter one part that's real and another part that's faked/mocked.
 |--------------------------|--------------|-----------------------------|---
 Read input from server     | csv file     | internal data-structure     | Fake the server store
 Validate input             | csv data     | valid / invalid             | None - it's a pure function
-Notify report availability | pdf file     | Available / Not available             | Fake the notification
+Notify report availability | pdf file     | Available / Not available             | Fake the notification via email
 Report inaccessible server | csv data     | valid / invalid             | Fake the server store
 Find minimum and maximum   | csv data     | Minimum, Maximum           | None - it's a pure function
-Detect trend               | csv data     | Battery Telemetrics Value,Date & Time            | None - it's a pure function
-Write to PDF               | csv data     | PDF file with Minimum, Maximum, Date & Time Value             | Fake the PDF store
+Detect trend               | csv data     | Trend Result (present/absent)           | None - it's a pure function
+Write to PDF               | Min, Max, BreachCount, Trends with Date, Timestamp  | PDF file with Minimum, Maximum, Date & Time Value             | Fake the call to off-the-shelf PDF converter.
