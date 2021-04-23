@@ -27,10 +27,13 @@ Notification must be sent when a new report is available.
 List the dependencies of the Analysis-functionality.
 
 1. Access to the Server containing the telemetrics in a csv file
-1. _enter dependency
-1. _enter dependency
+2. Acess to the Server for storing the PDF report which is generated every week.
+3. Libraries required to perform read operation on the input data csv files (eg: csv, pandas)
+4. Libraries or Tools required to generate the PDF reports (eg: Pylatex)
+5. API's required to send notifications like email/sms when a new report is available.
+6. Libraries required to get system date and time.
+7. Libraries for decoding the physical signal values of Battery Telemetrics if the signals are stored in a different format or encoded form.
 
-(add more if needed)
 
 ### Mark the System Boundary
 
@@ -40,10 +43,10 @@ What is included in the software unit-test? What is not? Fill this table.
 |---------------------------|---------------|---
 Battery Data-accuracy       | No            | We do not test the accuracy of data
 Computation of maximum      | Yes           | This is part of the software being developed
-Off-the-shelf PDF converter | _enter Yes/No | _enter reasoning
-Counting the breaches       | _enter Yes/No | _enter reasoning
-Detecting trends            | _enter Yes/No | _enter reasoning
-Notification utility        | _enter Yes/No | _enter reasoning
+Off-the-shelf PDF converter | No           | A mock can be used to trigger PDF write. PDF output need not tested.
+Counting the breaches       | Yes           | This is part of the software being developed to detect if threshold value is breached.
+Detecting trends            | Yes           | This is part of the software being developed
+Notification utility        | No           | A mock can be used to trigger notification.
 
 ### List the Test Cases
 
@@ -51,12 +54,14 @@ Write tests in the form of `<expected output or action>` from `<input>` / when `
 
 Add to these tests:
 
-1. Write minimum and maximum to the PDF from a csv containing positive and negative readings
-1. Write "Invalid input" to the PDF when the csv doesn't contain expected data
-1. _enter a test
-1. _enter a test
+1. Write minimum and maximum to the PDF from a csv containing positive and negative readings.
+2. Write Date and Time to the PDF when the reading continuously increases for 30 mins.
+3. Write "Invalid input" to the PDF when the csv doesn't contain expected data.
+4. Write "Data Unavailable" to the PDF when the csv file is empty or does not exist in the server.
+5. Write the count of breaches to the PDF report when the number of times the measured value crosses the threshold value in a month.
+6. Write a notification " Report Available", when a new report is available.
+7. Write "Success", when a PDF report is stored successfully in the server.
 
-(add more)
 
 ### Recognize Fakes and Reality
 
@@ -68,8 +73,8 @@ Enter one part that's real and another part that's faked/mocked.
 |--------------------------|--------------|-----------------------------|---
 Read input from server     | csv file     | internal data-structure     | Fake the server store
 Validate input             | csv data     | valid / invalid             | None - it's a pure function
-Notify report availability | _enter input | _enter output               | _enter fake or mock
-Report inaccessible server | _enter input | _enter output               | _enter fake or mock
-Find minimum and maximum   | _enter input | _enter output               | _enter fake or mock
-Detect trend               | _enter input | _enter output               | _enter fake or mock
-Write to PDF               | _enter input | _enter output               | _enter fake or mock
+Notify report availability | pdf file     | Available / Not available             | Fake the notification via email
+Report inaccessible server | Server address     | valid / invalid             | Fake the server store
+Find minimum and maximum   | csv data     | Minimum, Maximum           | None - it's a pure function
+Detect trend               | csv data     | Trend Result (present/absent)           | None - it's a pure function
+Write to PDF               | Internal data structure  | PDF file with Minimum, Maximum, Date & Time Value             | Fake the call to off-the-shelf PDF converter.
